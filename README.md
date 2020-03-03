@@ -1,31 +1,30 @@
-# Create Vanilla JS App 🌴🌴🌴
+# Парсер вакансий
 
-# A very simple vanilla js boilerplate
+# Описание
 
-- Includes webpack HMR
-- Webpack 4
-- Es6 / Babel
-- Webpack CSS loader / Style loader
+Созданное приложение при загрузке обращается к сайту https://ru.jooble.org/ и загружает вакансии и соответствующие им зарплаты с 3-х первых страниц. 
+![Alt text](/screens/1.png)
+Сводка зарплат по найденным вакансиям:
+![Alt text](/screens/2.png)
 
-Please keep in mind, This is a helper for me to tinker with ideas and start projects from - I've tried to keep it as clean as possible. Add your own packages to suit your own workflow. The one thing I've ommited is `package-lock.json` generation. But you can add this back in by removing `.npmrc` before running `npm i`
+### Установка и запуск
 
-### First
+Открыть папку проекта редактором кода (например Visual Strudio Code), выполнить команды
 
-Install deps from project root `yarn` or `npm i`
+   npm i
+   npm start
 
-### Start development server with:
+перейти в браузере по адресу http://localhost:9000/   
 
-`yarn start:dev` or `npm run start:dev`
+### Использованные технологии
 
-It's possible to use a different port by specifying this first like so: 
+Сборка проекта - Webpack
+Boilerplate - create-vanilla-js-app
+UI - Bootstrap
+Графики - Chart.io
 
-`CVA_PORT=7788 yarn start:dev` to start with port 7788. Same for npm just include `CVA_PORT=7788` at the beginning.
+### Особенности
 
-### Build for production
+Т.к. в современных браузерах используется технология CORS (https://developer.mozilla.org/ru/docs/Web/HTTP/CORS), которая ограничивает доступ к внешним доменам, был использован cors-proxy-webpack-plugin
 
-`yarn build` or `npm run build`
-
-### Ways you may add to this
-
-+ Add jsx and react - Or just use create react app instead!
-+ Add a .env for project specific environment values
+В нашем случае, сайт https://ru.jooble.org/ является внешним по отношению к http://localhost:9000/ 
