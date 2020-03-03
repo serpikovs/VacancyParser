@@ -19,11 +19,8 @@
 ### Использованные технологии
 
 Сборка проекта - Webpack
-
 Boilerplate - create-vanilla-js-app
-
 UI - Bootstrap
-
 Графики - Chart.io
 
 ### Особенности
