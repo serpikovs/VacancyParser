@@ -14,16 +14,12 @@ export default async function (root) {
 }
 
 function drawBasics($root){
-
-
   const $button = $('#findBtn');
   const $input = $('#vacancyInput')
   
   $input.keypress(async function(event){
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if(keycode == '13'){
-
-    console.log('Ok')
       const searchedText = $('#vacancyInput').val()
       let jobs = await loadJobs(3,searchedText);
   
@@ -32,13 +28,13 @@ function drawBasics($root){
     }
   });
 
-  $button.on('click', async () => {
-    
+  $button.on('click', async () => {    
+
     const searchedText = $('#vacancyInput').val()
     let jobs = await loadJobs(3,searchedText);
-    console.log('Ok')
     drawJobsSection(jobs)
     drawChart(jobs);
+
   });
 }
 
@@ -64,7 +60,6 @@ function drawJobsSection(jobs){
     else
     $table.append('<tr>'+'<td>'+element.position+'</td>'+'<td>' +element.salary[0]+'-'+element.salary[1]+' ₽'+'</td>'+'</tr>')
   });
-
 }
 
 function drawChart(jobs)
@@ -117,8 +112,7 @@ function drawChart(jobs)
               }]
           }
       }
-  });
-  
+  });  
 }
 
 

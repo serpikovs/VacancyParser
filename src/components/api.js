@@ -1,7 +1,5 @@
 import $ from 'jquery';
 
-
-
 export async function loadJobs(pagesQty, searchedPosition) {
     let pos = (searchedPosition==undefined) ? '' : searchedPosition 
     let arr = []
