@@ -14,9 +14,10 @@ export async function loadJobs(pagesQty, searchedPosition) {
             const $element = $(element); 
             const position = $element.find('.position').text();
             const reg = /(\b\d*[ ]\d*\b)/gm
-            let salary = $element.find('.salary').text().match(reg);
-            if (salary==null) salary = ['0']
-            return { position, salary };
+            let salaryRange = $element.find('.salary').text().match(reg);
+            console.log(salaryRange)
+            if (salaryRange==null) salaryRange = ['0']
+            return { position, salary: salaryRange };
         })
         arr = arr.concat(jobs.toArray())
     }
