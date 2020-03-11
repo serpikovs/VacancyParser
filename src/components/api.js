@@ -13,10 +13,10 @@ export async function loadJobs(pagesQty, searchedPosition) {
         const jobs = $results.map((index, element) => {
             const $element = $(element); 
             const position = $element.find('.position').text();
-            const reg = /(\b\d*[ ]\d*\b)/gm
-            let salaryRange = $element.find('.salary').text().match(reg);
-            console.log(salaryRange)
-            if (salaryRange==null) salaryRange = ['0']
+            let salaryRange = $element.find('.salary').text();
+            salaryRange = salaryRange.split(' ').join('');
+            salaryRange = salaryRange.match(/\d+/g).map(salary => parseInt(salary, 10));
+            if (salaryRange==null) salaryRange = [0]
             return { position, salary: salaryRange };
         })
         arr = arr.concat(jobs.toArray())

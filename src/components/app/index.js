@@ -61,7 +61,6 @@ function drawChart(jobs) {
   const salaryArr = [0,0,0,0]
   jobs.forEach(job => {
     let salaryDigits = (job.salary.length==1) ? job.salary[0] : job.salary[1]
-    salaryDigits=salaryDigits.replace(/\s+/g,'')
     switch (true){
       case (salaryDigits<40000) :  salaryArr[0]+=1; break;
       case (salaryDigits<60000) :  salaryArr[1]+=1; break;
