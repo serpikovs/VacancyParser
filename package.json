@@ -10,7 +10,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.4.1",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "jquery": "^3.4.1",
     "popper": "^1.0.1",
     "popper.js": "^1.16.1"
